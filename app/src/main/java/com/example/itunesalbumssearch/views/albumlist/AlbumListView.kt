@@ -31,7 +31,7 @@ class AlbumListView : AppCompatActivity(), AlbumListContract.View {
 
     internal var presenter: AlbumListPresenter
 
-    init{
+    init {
         presenter = AlbumListPresenter(this)
     }
 
@@ -83,7 +83,7 @@ class AlbumListView : AppCompatActivity(), AlbumListContract.View {
         adapter!!.notifyDataSetChanged()
 
         setLoadingIndicator(true)
-        listAlbums.postDelayed({presenter.getAlbums(strTerm, entity)}, 2000)
+        listAlbums.postDelayed({ presenter.getAlbums(strTerm, entity) }, 2000)
     }
 
     override fun displayMessage(message: String) {
@@ -92,7 +92,7 @@ class AlbumListView : AppCompatActivity(), AlbumListContract.View {
     }
 
     override fun setLoadingIndicator(isLoading: Boolean) {
-        if (isLoading){
+        if (isLoading) {
             listAlbums.showShimmerAdapter()
         } else {
             listAlbums.hideShimmerAdapter()

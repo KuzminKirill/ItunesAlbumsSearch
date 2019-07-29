@@ -20,8 +20,6 @@ import java.lang.Exception
 
 class AlbumDetailView : AppCompatActivity(), AlbumDetailContact.View {
 
-
-
     internal lateinit var context: Context
     internal lateinit var main: LinearLayout
     internal lateinit var imgArtwork: ImageView
@@ -67,7 +65,7 @@ class AlbumDetailView : AppCompatActivity(), AlbumDetailContact.View {
             //listSongs.addItemDecoration(DividerItemDecoration(context, DividerItemDecoration.VERTICAL))
             listSongs.itemAnimator = DefaultItemAnimator()
             listSongs.adapter = adapter
-            listSongs.postDelayed({presenter.getAlbumTracks(id.toString(), entity)}, 200)
+            listSongs.postDelayed({ presenter.getAlbumTracks(id.toString(), entity) }, 200)
             displaySongList(dataTracks)
 
         } catch (e: Exception) {
@@ -90,7 +88,14 @@ class AlbumDetailView : AppCompatActivity(), AlbumDetailContact.View {
         Snackbar.make(main, message, Snackbar.LENGTH_LONG).show()
     }
 
-    override fun displayAlbum(id: Int, name: String, artistName: String, price: Double, artwork: String, trackCount: Int) {
+    override fun displayAlbum(
+        id: Int,
+        name: String,
+        artistName: String,
+        price: Double,
+        artwork: String,
+        trackCount: Int
+    ) {
         if (supportActionBar != null) {
             supportActionBar!!.setDisplayHomeAsUpEnabled(true)
             supportActionBar!!.title = name

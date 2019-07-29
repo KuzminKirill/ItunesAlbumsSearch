@@ -6,7 +6,7 @@ import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-internal class AlbumDetailPresenter (private val songListView: AlbumDetailContact.View): AlbumDetailContact.Presenter {
+internal class AlbumDetailPresenter(private val songListView: AlbumDetailContact.View) : AlbumDetailContact.Presenter {
 
     override fun getAlbumTracks(id: String, entity: String) { //get data
         val service = ServiceFactory.instance

@@ -25,7 +25,7 @@ class AlbumAdapter internal constructor(var context: Context, private val albumL
     }
 
     override fun getItemCount(): Int {
-       return albumList.size
+        return albumList.size
     }
 
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
@@ -64,7 +64,7 @@ class AlbumAdapter internal constructor(var context: Context, private val albumL
                 detail.putExtra("artistName", albumList[adapterPosition].artistName)
                 detail.putExtra("albumPrice", albumList[adapterPosition].collectionPrice)
                 detail.putExtra("artworkURLs", albumList[adapterPosition].artworkUrl100)
-                detail.putExtra("trackCount", albumList[adapterPosition].trackCount )
+                detail.putExtra("trackCount", albumList[adapterPosition].trackCount)
                 context.startActivity(detail)
             }
         }

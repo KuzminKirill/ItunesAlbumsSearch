@@ -2,7 +2,7 @@ package com.example.itunesalbumssearch.views.albumdetail
 
 import com.example.itunesalbumssearch.Track
 
-class AlbumDetailContact{
+class AlbumDetailContact {
 
     interface View {
         fun displayMessage(message: String)
@@ -12,7 +12,7 @@ class AlbumDetailContact{
         fun displaySongList(dataTracks: List<Track>)
     }
 
-    interface Presenter{
+    interface Presenter {
         fun getAlbumTracks(id: String, entity: String)
     }
 }

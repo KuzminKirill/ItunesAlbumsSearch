@@ -11,9 +11,9 @@ import com.example.itunesalbumssearch.Track
 import kotlinx.android.synthetic.main.song_item.view.*
 
 class SongListAdapter internal constructor(private val songList: List<Track>) :
-        RecyclerView.Adapter<SongListAdapter.MyViewHolder>() {
+    RecyclerView.Adapter<SongListAdapter.MyViewHolder>() {
 
-    inner class MyViewHolder(view: View): RecyclerView.ViewHolder(view) {
+    inner class MyViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         var row: LinearLayout
         var txtSongName: TextView
 
