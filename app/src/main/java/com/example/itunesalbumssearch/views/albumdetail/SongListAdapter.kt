@@ -1,4 +1,4 @@
-package com.example.itunesalbumssearch.albumdetail
+package com.example.itunesalbumssearch.views.albumdetail
 
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater

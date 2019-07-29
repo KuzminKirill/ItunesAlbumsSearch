@@ -1,9 +1,8 @@
-package com.example.itunesalbumssearch.albumdetail
+package com.example.itunesalbumssearch.views.albumdetail
 
-import com.example.itunesalbumssearch.Album
 import com.example.itunesalbumssearch.Track
 
-public class AlbumDetailContact{
+class AlbumDetailContact{
 
     interface View {
         fun displayMessage(message: String)

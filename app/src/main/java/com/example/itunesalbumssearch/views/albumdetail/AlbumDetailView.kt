@@ -1,4 +1,4 @@
-package com.example.itunesalbumssearch.albumdetail
+package com.example.itunesalbumssearch.views.albumdetail
 
 import android.content.Context
 import android.os.Bundle
@@ -52,19 +52,19 @@ class AlbumDetailView : AppCompatActivity(), AlbumDetailContact.View {
 
 
         try {
-            var entity = "song"
-            var id = intent.getIntExtra("albumId", 0)
-            var name = intent.getStringExtra("albumName")
-            var artistName = intent.getStringExtra("artistName")
-            var price = intent.getDoubleExtra("albumPrice", 0.0)
-            var artworkURL = intent.getStringExtra("artworkURLs")
-            var trackCount = intent.getIntExtra("trackCount", 0)
+            val entity = "song"
+            val id = intent.getIntExtra("albumId", 0)
+            val name = intent.getStringExtra("albumName")
+            val artistName = intent.getStringExtra("artistName")
+            val price = intent.getDoubleExtra("albumPrice", 0.0)
+            val artworkURL = intent.getStringExtra("artworkURLs")
+            val trackCount = intent.getIntExtra("trackCount", 0)
             displayAlbum(id, name, artistName, price, artworkURL, trackCount)
 
 
             val mLayoutManager = LinearLayoutManager(applicationContext)
             listSongs.layoutManager = mLayoutManager
-            listSongs.addItemDecoration(DividerItemDecoration(context, DividerItemDecoration.VERTICAL))
+            //listSongs.addItemDecoration(DividerItemDecoration(context, DividerItemDecoration.VERTICAL))
             listSongs.itemAnimator = DefaultItemAnimator()
             listSongs.adapter = adapter
             listSongs.postDelayed({presenter.getAlbumTracks(id.toString(), entity)}, 200)
@@ -99,7 +99,7 @@ class AlbumDetailView : AppCompatActivity(), AlbumDetailContact.View {
         val artworkUrl = artwork
         Glide.with(context).load(artworkUrl).into(imgArtwork)
 
-        txtArtistName.text = artistName
+        txtArtistName.text = "Artist name: " + artistName
         txtCount.text = trackCount.toString() + " songs"
 
 

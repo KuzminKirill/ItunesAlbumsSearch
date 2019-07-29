@@ -1,4 +1,4 @@
-package com.example.itunesalbumssearch.albumlist
+package com.example.itunesalbumssearch.views.albumlist
 
 import com.example.itunesalbumssearch.Album
 

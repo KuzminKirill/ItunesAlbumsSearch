@@ -1,4 +1,4 @@
-package com.example.itunesalbumssearch.albumlist
+package com.example.itunesalbumssearch.views.albumlist
 
 import android.app.SearchManager
 import android.content.Context
@@ -55,7 +55,7 @@ class AlbumListView : AppCompatActivity(), AlbumListContract.View {
 
     }
 
-    override fun onCreateOptionsMenu(menu: Menu): Boolean {
+    override fun onCreateOptionsMenu(menu: Menu): Boolean { //adding search
         menuInflater.inflate(R.menu.search, menu)
         val searchView = MenuItemCompat.getActionView(menu.findItem(R.id.action_search)) as SearchView
         val searchManager = getSystemService(Context.SEARCH_SERVICE) as SearchManager
@@ -74,8 +74,8 @@ class AlbumListView : AppCompatActivity(), AlbumListContract.View {
         return true
     }
 
-    fun search(strTerm: String) {
-        var entity = "album"
+    fun search(strTerm: String) { //set list visible and get data
+        val entity = "album"
         txtNoAlbums.visibility = View.GONE
         listAlbums.visibility = View.VISIBLE
 
@@ -99,7 +99,7 @@ class AlbumListView : AppCompatActivity(), AlbumListContract.View {
         }
     }
 
-    override fun displayAlbums(dataAlbums: List<Album>) {
+    override fun displayAlbums(dataAlbums: List<Album>) { //refresh data
         setLoadingIndicator(false)
         this.dataAlbums.clear()
         this.dataAlbums.addAll(dataAlbums)
