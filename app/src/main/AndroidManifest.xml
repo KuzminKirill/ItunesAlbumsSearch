@@ -11,14 +11,17 @@
             android:roundIcon="@mipmap/ic_launcher_round"
             android:supportsRtl="true"
             android:theme="@style/AppTheme">
-        <activity android:name="com.example.itunesalbumssearch.views.albumlist.AlbumListView">
+        <activity
+                android:name="com.example.itunesalbumssearch.views.albumlist.AlbumListView"
+                android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <activity android:name="com.example.itunesalbumssearch.views.albumdetail.AlbumDetailView"/>
+        <activity android:name="com.example.itunesalbumssearch.views.albumdetail.AlbumDetailView"
+                  android:screenOrientation="portrait"/>
     </application>
 
 </manifest>
